@@ -419,6 +419,7 @@
       font-size: clamp(30px, 6vw, 56px);
       color: var(--red);
       text-shadow: 0 18px 55px rgba(255, 42, 42, .14);
+      text-align: center;
     }
 
 
@@ -1036,12 +1037,17 @@
   <!-- Gate -->
   <section id="gate" role="dialog" aria-modal="true">
     <div class="gateCard" id="gateCard">
-      <h1 class="gateTitle">Antes del telón…</h1>
+      <h1 class="gateTitle">Antes de cualquier cosa…</h1>
       <p class="gateLead">
-        Esto es una obra en actos. Cada scroll es un paso más abajo. Cada palabra, una cuerda.
+        Honestamente, había pensado en no mandarte esto y como dijiste,
+        <span class="accent">prenderle fuego a la carta</span>, pero algo dentro de mí
+        me hizo cambiar de opinión y luego de un par de modificaciones, aquí estamos, <span class="accent">la última
+          carta</span>. Con las referencias que me faltaban hacer.
+        Esto será una obra teatral llena de drama. Cada scroll es un paso más abajo.
         Y al fondo… el infierno.
       </p>
-      <p class="gateQ"><span class="accent">¿Estás lista</span> para el descenso hacia las profundidades?</p>
+      <p class="gateQ">Así como siempre te dije, "dónde sea por verte y al <span class="accent">infierno por
+          tenerte</span>"</p>
       <div class="gateActions gateActionsOne">
         <div class="oathLine">
           <span class="oathSeal" aria-hidden="true">
@@ -1115,7 +1121,7 @@
 
           <a href="#" class="oathLink" id="btnYes" role="button" aria-label="Firmar y continuar el descenso">
             <span class="oathText">
-              Sí… <span class="oathEm">que se cierre el mundo</span> y se abra el telón.
+              Así weno, <span class="oathEm">que arda el mundo</span> y se abra el telón.
             </span>
           </a>
         </div>
@@ -1217,7 +1223,6 @@
           <!-- duplicamos para marquee fluido -->
           <div class="marqueeInner" id="marqueeInner">
             <span class="songTitle">Melodía del corazón para el descenso al infierno</span>
-            <span class="songTitle">Melodía del corazón para el descenso al infierno</span>
           </div>
         </div>
         <div class="songSub soft">Reproductor — como una promesa que no se detiene</div>
@@ -1256,7 +1261,6 @@
   <div id="night" aria-hidden="true">
     <canvas id="skyCanvas"></canvas>
     <div id="nightGlow"></div>
-    <!-- IMPORTANTE: usa el moon.png que te dejé arriba -->
     <img id="moon" src="moon.png" alt="Luna" />
     <div id="quote">
       <div class="hand">“Cuando tienes la luna enfrente de ti<br />no volteas a ver las estrellas”</div>
@@ -1264,70 +1268,79 @@
   </div>
 
   <script>
-    // =========================
-    // Texto por actos (tu carta)
-    // =========================
     const ACTS = [
       {
         title: "El sueño que se cumplió",
         paragraphs: [
-          `Te vi y el mundo se quedó <span class="accent">sin ruido</span>. Como si el destino,
-         por una vez, hubiera decidido ser bueno conmigo.`,
+          `Las flores florecen y mueren, las estrellas brillan pero eventualmente se apagan,
+          todo muere, la tierra, el sol, y hasta algo tan inmenso como esta universo no está excluido...
+          <br>
+          Comparado con eso, la vida de una persona es efímera como un abrir y cerrar de ojos, y justo en medio de ese parpadeo, <span class="accent">te conocí...</span>`,
+          `No quiero sonar mal, pero supiste que me llamaste la atención desde el primer momento, 
+          algo en ti que sabes que ninguna persona en su sano juicio dejaría ir la oportunidad de estar contigo.
+          Eorque eres el capricho que jamás dejaría dejar pasar`,
+          `Tal vez fue algo que tomó demasiados años lograr estar contigo en la forma en que estamos ahora,
+          muchos errores y una gran cantidad de comunicación y confianza para llegar a este punto.
+          <br>
+          Tanto que al llegar a pensar en ello, <span class="accent">hubiera adelantado muchas cosas</span>.`,
+          `Lamentablemente debido a muchas circunstancias, no se pudo lograr antes de lo que es ahora, 
+          tal vez dirías tú, <span class="accent">que todo llega en su momento</span>. Y tienes razón.`,
+          `Para tí todo fue aparte, para mí fue poder lograr algo que pensé que nunca podría tener, ese sueño imposible.
+          <br>
+          El aceptar que eso es el mundo de los bellos y que yo no podía estar ahí.`,
+          `Así que es gracias a ti que descubrí que con una tremenda perseverancia y esfuerzo, los sueños imposibles pueden hacerse realidad.
+          <br>
+          Y por eso siempre te diré que <span class="accent">nos has salvado, estamos agradecidas</span>.`,
           `<span class="accent">Lo vivido contigo no será repetido con ninguna otra persona</span>.
-         No por falta de caminos, sino porque ya existe el nuestro: irrepetible, exacto, imposible de copiar.`,
-          `Y aun sabiendo que lo nuestro no sería eterno,
-         <span class="accent">el para siempre no sería suficiente</span>.
-         Porque contigo no caben las medidas: ni las promesas, ni el tiempo.`,
-          `Si este es el inicio del descenso… entonces que el infierno me encuentre
-         <span class="accent">con tu nombre en la boca</span>.`
-        ]
-      },
-      {
-        title: "La aparición inesperada",
-        paragraphs: [
-          `Apareciste donde no te buscaba. Y sin pedir permiso,
-         <span class="accent">ordenaste mi caos</span>. Me diste una razón para creer.`,
-          `Yo te miraba como se mira un milagro: con miedo de tocarlo
-         y que desaparezca. Pero te quedaste… y yo me quedé contigo.`,
-          `Por eso duele tanto: porque no fue un capricho.
-         Fue algo real. Algo que <span class="accent">me cambió la vida</span>.`,
-          `Y mientras bajábamos, juré —en silencio— que si alguna vez te perdía,
-         <span class="accent">no iba a negociar mi amor</span>… aunque hoy esté tentado a hacerlo.`
+         No por falta de caminos, sino porque ya no siento que tenga más que dar o que todo sería nuevamente en vano, 
+         las personas ahora no les gusta la intensidad, y siempre tenemos que reprimir lo que somos, todo por no asustar a la otra.
+         <br>
+         Pero contigo fue diferente, <span class="accent">pude ser yo misma</span>, a pesar de que te sacaba de onda,
+         que me trataras de alejar, que me dijeras "ora", siempre supe que solo era una ilusión.`,
+          `Y aun sabiendo que a pesar de saber que todo estaba en mi cabeza, <span class="accent">¿Cómo eso iba a significar que no era real?.</span>
+          <br>
+          No me importa ser vulnerable contigo, porque has visto y sabes todo lo que he sufrido,
+          mi curita del alma, mi voz, mi sí, mis te amos. Y pese a todo eso, y aún así sabiendo que no sería eterno,
+         <span class="accent">el para siempre no sería suficiente</span>.`
         ]
       },
       {
         title: "El último respiro",
         paragraphs: [
-          `Te lo pedí con la voz temblando: <span class="accent">no me dejes con el amor en las manos</span>.
-         Y aun así, supe que quizá sería inevitable… como una puerta que tarde o temprano se cierra.`,
+          `Te pedí con el alma temblando: no me dejes con el amor en las manos.
+         Y aun así, supe que quizá sería inevitable… como una puerta que tarde o temprano se cierra.
+         <br>
+         De tantas formas literales y figuradas, te entregué mi corazón. porque tenlo por seguro, <span class="accent">mi corazón siempre será tuyo</span>.`,
           `El día que <span class="accent">llegó alguien más a tu vida</span> no lo imaginé.
          No lo supe ver venir. Y cuando lo entendí… me rompió por dentro.`,
-          `En mi desesperación pensé lo impensable: ofrecerte un trato.
-         <span class="accent">Cinco cifras</span>, lo que haga falta… con tal de seguir como estamos,
-         con tal de estirar un poco más este hilo antes de que se corte.`,
+          `Te amé con toda mi fé sin medida cuando estabas compartida, porque solo así podía hacerlo, sin pertenencias ni ataduras.`,
           `Porque <span class="accent">te necesito más en mi vida de lo que podría pensar</span>.
-         Y me aterra admitirlo, pero me aterra más perderte.`,
-          `Y aunque supe cosas que dolieron, cosas que no debería perdonar…
-         <span class="accent">voy a seguir</span> y fingir que nunca pasaron.
-         No por debilidad, sino por esta esperanza que me desangra.`
+         Y me aterra admitirlo, pero me aterra más lastimarte.`,
+          `Y aunque supe cosas que dolieron, cosas tal vez no debí saber, no te reprocho nada.
+         <span class="accent">Voy a seguir</span> y fingir que nunca pasaron.
+         No por debilidad, sino por esta esperanza que me desangra.`,
+         `A pesar de todo,seguiré siendo tu amigui, porque no puedo dejar de serlo. <span class="accent">Eres mi persona favorita</span>.'
+          Aunque a veces me sienta como un fantasma en tu vida, una sombra que se asoma de vez en cuando.
+          <br>
+          Porque muchas veces no supe bien exactamente qué era para ti, porque no me sentía ni una cosa ni otra.`,
+          `En el fondo no podría perdonarme no haberlo intentado todo por ti, <span class="accent">aunque eso me destruya</span>.
+          Así que aquí estoy, dispuesta a todo por ti, aunque eso signifique perderme a mí misma. 
+          Porque preferiría mil veces perder todo lo que tengo que perderte a ti.
+          <br>
+          Así que dejando la idea aquí, si 4 cifras no eran suficientes, podría ofrecer hasta 5 cifras, si eso fuera necesario.
+          Aunque en el fondo sepa la respuesta...`
         ]
       },
       {
         title: "La aria eterna del corazón roto",
         paragraphs: [
-          `Sé que <span class="accent">no soy perfecto</span>.
-         Tengo sombras, errores, fracturas.
-         Y aun así quisiera dar todo de mí por lo que podría obtener de ti:
-         una última mirada limpia, una última verdad.`,
-          `Quiero permanecer <span class="accent">fiel a mis principios</span>:
-         no dejarte de amar pase lo que pase.
-         Que el mundo cambie, que la vida arrase… yo seguiré aquí.`,
-          `No te pido eternidad. Solo una última respuesta
-         antes del adiós: dime si alguna parte de ti
-         todavía <span class="accent">me elige</span>.`,
-          `<span class="accent">Y si un día me necesitas… estaré contigo.</span>
-         Siempre que me llames. Siempre que te falte aire.
-         Siempre.`
+          `Sé bien que <span class="accent">no soy nada</span>.
+          ¿Y quién soy yo para hacerte sentir responsable del amor inútil que te tengo?.
+          <br>
+          A pesar de todo, permaneceré fiel a mis principios, porque fue mi señal que pedí a Dios, por eso
+         no te dejaré de amar pase lo que pase. Que el mundo cambie, pero que no nos cambie a nosotras.`,
+          `Y si un día me necesitas… estaré contigo. Siempre que me llames. Siempre que te falte aire.
+         <span class="accent">Always.</span>`
         ]
       }
     ];
@@ -1394,7 +1407,8 @@
       }
 
       // Hint SOLO en el primer párrafo del primer acto
-      hint.style.display = (actIndex === 0 && paraIndex === 0) ? "flex" : "none";
+      hint.style.display = (actIndex === 0 && paraIndex === -1) ? "flex" : "none";
+      actTitle.style.display = (paraIndex === -1) ? "flex" : "none";
     }
 
     // =========================
@@ -1503,6 +1517,10 @@
       // 4) Abrir cortina
       document.body.classList.remove("curtainsClosing");
       await wait(760);
+
+      await audio.play();
+      setPlaying(true);
+
     });
 
 
